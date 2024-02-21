@@ -26,8 +26,9 @@ public class CatTest {
     public void catEatPredatorFood() throws Exception {
         Cat cat = new Cat(feline);
         Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+        List<String> expected = List.of("Животные", "Птицы", "Рыба");
         List<String> actual = cat.getFood();
-        assertEquals("Ожидаемый результат не соответствует актуальному", List.of("Животные", "Птицы", "Рыба"), actual);
+        assertEquals("Ожидаемый результат не соответствует актуальному", expected, actual);
     }
 }
 
