@@ -4,7 +4,6 @@ import com.example.Feline;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
@@ -35,6 +34,5 @@ public class AlexTheLionTest {
         int actual = new AlexTheLion(feline, "Самец").getKittens();
         assertEquals("Ожидаемый результат не соответствует актуальному", expected, actual);
     }
-
 }
 
