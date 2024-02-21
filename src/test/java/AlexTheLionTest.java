@@ -14,10 +14,7 @@ public class AlexTheLionTest {
     @Spy
     Feline feline;
 
-    AlexTheLion alex = new AlexTheLion(feline, "Самец");
 
-    public AlexTheLionTest() throws Exception {
-    }
 
     @Test
     public void checkOnFriends() {
