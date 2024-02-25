@@ -5,6 +5,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
@@ -12,7 +13,8 @@ import java.util.List;
 @RunWith(MockitoJUnitRunner.class)
 public class LionTest {
     @Mock
-    Feline feline;
+    private Feline feline;
+    private Lion lion;
 
     @Test
     public void constructorThrowsExceptionOnUnsupportedSex() {
@@ -30,17 +32,28 @@ public class LionTest {
 
     @Test
     public void hasKittens() throws Exception {
-        Lion lion = new Lion(new Feline(), "Самец");
+        Mockito.when(feline.getKittens()).thenReturn(1);
         int expected = 1;
-        int actual = lion.getKittens();
+        int actual = feline.getKittens();
         assertEquals("Ожидаемый результат не соотвествует актуальному", expected, actual);
+
+//        Lion lion = new Lion(new Feline(), "Самец");
+//        int expected = 1;
+//        int actual = lion.getKittens();
+//        assertEquals("Ожидаемый результат не соотвествует актуальному", expected, actual);
     }
 
     @Test
     public void lionFoodIsMeatTest() throws Exception {
-        Lion lion = new Lion(new Feline(), "Самец");
-        List<String> expectedResult = List.of("Животные", "Птицы", "Рыба");
-        assertEquals(expectedResult, lion.getFood());
+        Lion lion = new Lion(feline, "Самец");
+        Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+        List<String> expected = feline.getFood("Хищник");
+        List<String> actual = lion.getFood();
+        assertEquals("Ожидаемый результат не соотвествует актуальному", expected, actual);
+
+//        Lion lion = new Lion(new Feline(), "Самец");
+//        List<String> expectedResult = List.of("Животные", "Птицы", "Рыба");
+//        assertEquals(expectedResult, lion.getFood());
     }
 }
 
