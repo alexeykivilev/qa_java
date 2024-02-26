@@ -14,7 +14,6 @@ import java.util.List;
 public class LionTest {
     @Mock
     private Feline feline;
-    private Lion lion;
 
     @Test
     public void constructorThrowsExceptionOnUnsupportedSex() {
@@ -37,10 +36,6 @@ public class LionTest {
         int actual = feline.getKittens();
         assertEquals("Ожидаемый результат не соотвествует актуальному", expected, actual);
 
-//        Lion lion = new Lion(new Feline(), "Самец");
-//        int expected = 1;
-//        int actual = lion.getKittens();
-//        assertEquals("Ожидаемый результат не соотвествует актуальному", expected, actual);
     }
 
     @Test
@@ -51,9 +46,6 @@ public class LionTest {
         List<String> actual = lion.getFood();
         assertEquals("Ожидаемый результат не соотвествует актуальному", expected, actual);
 
-//        Lion lion = new Lion(new Feline(), "Самец");
-//        List<String> expectedResult = List.of("Животные", "Птицы", "Рыба");
-//        assertEquals(expectedResult, lion.getFood());
     }
 }
 

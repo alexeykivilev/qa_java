@@ -19,9 +19,6 @@ public class FelineTest {
         String actual = feline.getFamily();
         assertEquals("Ожидаемый результат не соответствует актуальному", expected, actual);
 
-//        String expected = "Кошачьи";
-//        String actual = feline.getFamily();
-//        assertEquals("Ожидаемый результат не соответствует актуальному", expected, actual);
     }
 
     @Test
@@ -29,9 +26,6 @@ public class FelineTest {
           feline.getFood("Хищник");
           Mockito.verify(feline).getFood("Хищник");
 
-//        List<String> expected = List.of("Животные", "Птицы", "Рыба");
-//        List<String> actual = feline.eatMeat();
-//        assertEquals("Ожидаемый результат не соответствует актуальному", expected, actual);
     }
 
     @Test
