@@ -30,7 +30,7 @@ public class LionTest {
     }
 
     @Test
-    public void hasKittens() throws Exception {
+    public void hasKittens()  {
         Mockito.when(feline.getKittens()).thenReturn(1);
         int expected = 1;
         int actual = feline.getKittens();
