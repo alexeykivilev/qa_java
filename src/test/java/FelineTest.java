@@ -1,4 +1,5 @@
 import com.example.Feline;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -15,9 +16,7 @@ public class FelineTest {
     @Test
     public void familyCatTest() {
         Mockito.when(feline.getFamily()).thenReturn("Кошачьи");
-        String expected = "Кошачьи";
-        String actual = feline.getFamily();
-        assertEquals("Ожидаемый результат не соответствует актуальному", expected, actual);
+        Assert.assertEquals("Ожидаемый результат не соответствует актуальному", "Кошачьи", feline.getFamily());
 
     }
 
