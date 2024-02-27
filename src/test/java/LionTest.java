@@ -31,10 +31,8 @@ public class LionTest {
 
     @Test
     public void hasKittens()  {
-        Mockito.when(feline.getKittens()).thenReturn(1);
-        int expected = 1;
-        int actual = feline.getKittens();
-        assertEquals("Ожидаемый результат не соотвествует актуальному", expected, actual);
+        Mockito.when(feline.getKittens(1)).thenReturn(1);
+        assertEquals("Ожидаемый результат не соответствует актуальному", 1, feline.getKittens(1));
 
     }
 
