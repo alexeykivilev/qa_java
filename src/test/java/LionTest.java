@@ -7,14 +7,12 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
-
 import java.util.List;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LionTest {
     @Mock
-    private Feline feline;
-    private Lion lion;
+    Feline feline;
 
     @Test
     public void constructorThrowsExceptionOnUnsupportedSex() {
@@ -32,15 +30,9 @@ public class LionTest {
 
     @Test
     public void hasKittens() throws Exception {
+        Lion lion = new Lion(feline, "Самец");
         Mockito.when(feline.getKittens()).thenReturn(1);
-        int expected = 1;
-        int actual = feline.getKittens();
-        assertEquals("Ожидаемый результат не соотвествует актуальному", expected, actual);
-
-//        Lion lion = new Lion(new Feline(), "Самец");
-//        int expected = 1;
-//        int actual = lion.getKittens();
-//        assertEquals("Ожидаемый результат не соотвествует актуальному", expected, actual);
+        assertEquals("Ожидаемый результат не соответствует актуальному", 1, lion.getKittens());
     }
 
     @Test
@@ -51,9 +43,6 @@ public class LionTest {
         List<String> actual = lion.getFood();
         assertEquals("Ожидаемый результат не соотвествует актуальному", expected, actual);
 
-//        Lion lion = new Lion(new Feline(), "Самец");
-//        List<String> expectedResult = List.of("Животные", "Птицы", "Рыба");
-//        assertEquals(expectedResult, lion.getFood());
     }
 }
 
